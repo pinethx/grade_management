@@ -21,6 +21,9 @@ select sc.no
   from student s join score sc on s.stdno = sc.stdno
  group by s.stdno;
  
+-- 특정 분반 조회 sql문
 select *
   from vw_full_score
- where stdno = ?;
+ where classR = ?;
+ 
+-- insert sql문
