@@ -7,9 +7,9 @@ import grade_management_program.dto.ClassR;
 public interface ClassRDao {
 
 	List<ClassR> selectClassRByAll();
-	ClassR selectClassRByNo(ClassR classR);
+	ClassR selectClassRByNo(ClassR classRm);
 	
-	int insertClassR(ClassR classR);
-	int updateClassR(ClassR newclassR);
-	int deleteClassR(String classR);
+	int insertClassR(ClassR classRm);
+	int updateClassR(ClassR newclassRm);
+	int deleteClassR(String classRm);
 }

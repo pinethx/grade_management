@@ -28,7 +28,7 @@ ALTER TABLE student
 
 -- 분반
 CREATE TABLE classr (
-	classr char(3) NOT NULL COMMENT '분반' -- 분반
+	classrm char(3) NOT NULL COMMENT '분반' -- 분반
 )
 COMMENT '분반';
 
@@ -36,7 +36,7 @@ COMMENT '분반';
 ALTER TABLE classr
 	ADD CONSTRAINT PK_classr -- 분반 기본키
 		PRIMARY KEY (
-			class -- 분반
+			classrm -- 분반
 		);
 
 -- 점수
@@ -77,7 +77,7 @@ ALTER TABLE student
 			classR -- 분반
 		)
 		REFERENCES classr ( -- 분반
-			class -- 분반
+			classrm -- 분반
 		);
 
 -- 점수
@@ -110,5 +110,5 @@ select stdno, stdname, classR
 select subcode, subname 
   from subject ;
   
-select classr
+select classrm
   from classr;

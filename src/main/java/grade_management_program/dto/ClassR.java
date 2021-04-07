@@ -1,24 +1,24 @@
 package grade_management_program.dto;
 
 public class ClassR {
-	private String ClassR;
+	private String classRm;
 
 	public ClassR(String classR) {
 		super();
-		ClassR = classR;
+		classRm = classR;
 	}
 
 	public String getClassR() {
-		return ClassR;
+		return classRm;
 	}
 
 	public void setClassR(String classR) {
-		ClassR = classR;
+		classRm = classR;
 	}
 
 	@Override
 	public String toString() {
-		return "ClassR [ClassR=" + ClassR + "]";
+		return "ClassRm [ClassRm=" + classRm + "]";
 	}
 
 }

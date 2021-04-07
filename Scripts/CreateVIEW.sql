@@ -24,6 +24,6 @@ select sc.no
 -- 특정 분반 조회 sql문
 select *
   from vw_full_score
- where classR = ?;
+ where classrm = ?;
  
 -- insert sql문
