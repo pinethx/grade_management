@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import grade_management_program.dao.StudentDao;
+import grade_management_program.dto.ClassR;
 import grade_management_program.dto.Student;
 import grade_management_program.exception.SqlConstraintException;
 import grade_management_program.util.JdbcUtil;
@@ -45,8 +46,8 @@ public class StudentDaoImpl implements StudentDao {
 	private Student getStudent(ResultSet rs) throws SQLException {
 		int stdNo = rs.getInt("stdno");
 		String stdName = rs.getString("stdname");
-		String classRm = rs.getString("classrm");
-		return new Student(stdNo, stdName, classRm);
+		ClassR classR = new ClassR(rs.getString("classr"));
+		return new Student(stdNo, stdName, classR);
 	}
 
 	@Override
@@ -54,7 +55,7 @@ public class StudentDaoImpl implements StudentDao {
 		String sql = "select stdno, stdname classrm from student where classrm = ?";
 		try(Connection con = JdbcUtil.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
-			pstmt.setString(1, student.getClassR());
+			pstmt.setString(1, student.getClassR().getClassR());
 			try(ResultSet rs = pstmt.executeQuery()){
 				if (rs.next()) {
 					return getStudent(rs);
@@ -73,7 +74,7 @@ public class StudentDaoImpl implements StudentDao {
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 			pstmt.setInt(1, student.getStdNo());
 			pstmt.setString(2, student.getStdName());
-			pstmt.setString(3, student.getClassR());
+			pstmt.setString(3, student.getClassR().getClassR());
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
 			throw new SqlConstraintException(e.getMessage(), e);
@@ -86,7 +87,7 @@ public class StudentDaoImpl implements StudentDao {
 		try(Connection con = JdbcUtil.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 			pstmt.setString(1, newstudent.getStdName());
-			pstmt.setString(2, newstudent.getClassR());
+			pstmt.setString(2, newstudent.getClassR().getClassR());
 			pstmt.setInt(3, newstudent.getStdNo());
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {

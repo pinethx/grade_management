@@ -2,11 +2,11 @@ package grade_management_program.dto;
 
 public class Score {
 	private int no;
-	private int stdNo;
-	private int subCode;
+	private Student stdNo;
+	private Subject subCode;
 	private int subScore;
-	
-	public Score(int no, int stdNo, int subCode, int subScore) {
+
+	public Score(int no, Student stdNo, Subject subCode, int subScore) {
 		super();
 		this.no = no;
 		this.stdNo = stdNo;
@@ -22,19 +22,19 @@ public class Score {
 		this.no = no;
 	}
 
-	public int getStdNo() {
+	public Student getStdNo() {
 		return stdNo;
 	}
 
-	public void setStdNo(int stdNo) {
+	public void setStdNo(Student stdNo) {
 		this.stdNo = stdNo;
 	}
 
-	public int getSubCode() {
+	public Subject getSubCode() {
 		return subCode;
 	}
 
-	public void setSubCode(int subCode) {
+	public void setSubCode(Subject subCode) {
 		this.subCode = subCode;
 	}
 
@@ -50,6 +50,5 @@ public class Score {
 	public String toString() {
 		return "Score [no=" + no + ", stdNo=" + stdNo + ", subCode=" + subCode + ", subScore=" + subScore + "]";
 	}
-	
-	
+
 }

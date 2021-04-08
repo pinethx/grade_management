@@ -7,7 +7,7 @@ import grade_management_program.dto.Subject;
 public interface SubjectDao {
 
 	List<Subject> selectSubjectByAll();
-	Subject selectStudentByNo(Subject subject);
+	int selectStudentByNo(Subject subject);
 	
 	int insertSubject(Subject subject);
 	int updateSubject(Subject newsubject);

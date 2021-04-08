@@ -2,9 +2,9 @@ package grade_management_program.dto;
 
 public class Subject {
 	private int subCode;
-	private int subName;
+	private String subName;
 	
-	public Subject(int subCode, int subName) {
+	public Subject(int subCode, String subName) {
 		super();
 		this.subCode = subCode;
 		this.subName = subName;
@@ -23,11 +23,11 @@ public class Subject {
 		this.subCode = subCode;
 	}
 
-	public int getSubName() {
+	public String getSubName() {
 		return subName;
 	}
 
-	public void setSubName(int subName) {
+	public void setSubName(String subName) {
 		this.subName = subName;
 	}
 

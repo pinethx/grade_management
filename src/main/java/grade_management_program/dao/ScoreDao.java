@@ -11,5 +11,5 @@ public interface ScoreDao {
 	
 	int insertScore(Score score);
 	int updateScore(Score newscore);
-	int deleteScore(int no);
+	int deleteScore(int stdno, int subcode);
 }
