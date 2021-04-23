@@ -1,4 +1,4 @@
-package grade_management_program.component;
+package grade_management_program.ui;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;

@@ -12,12 +12,12 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
-import grade_management_program.component.ConfirmAllGradeFrame;
-import grade_management_program.component.ConfirmClassGradeFrame;
-import grade_management_program.component.InsertGradeFrame;
+import grade_management_program.ui.ConfirmAllGradeFrame;
+import grade_management_program.ui.ConfirmClassGradeFrame;
+import grade_management_program.ui.InsertFormFrame;
 
 @SuppressWarnings("serial")
-public class grade_main extends JFrame implements ActionListener {
+public class Grade_main extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 	private JButton btnInsert;
@@ -31,7 +31,7 @@ public class grade_main extends JFrame implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					grade_main frame = new grade_main();
+					Grade_main frame = new Grade_main();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +43,7 @@ public class grade_main extends JFrame implements ActionListener {
 	/**
 	 * Create the frame.
 	 */
-	public grade_main() {
+	public Grade_main() {
 		initialize();
 	}
 	private void initialize() {
@@ -58,7 +58,7 @@ public class grade_main extends JFrame implements ActionListener {
 		JPanel pMenu = new JPanel();
 		contentPane.add(pMenu, BorderLayout.NORTH);
 		
-		btnInsert = new JButton("학생 성적 입력");
+		btnInsert = new JButton("정보 관리");
 		btnInsert.addActionListener(this);
 		pMenu.add(btnInsert);
 		
@@ -89,15 +89,18 @@ public class grade_main extends JFrame implements ActionListener {
 		}
 	}
 	protected void actionPerformedBtnInsert(ActionEvent e) {
-		InsertGradeFrame frame = new InsertGradeFrame();
+		InsertFormFrame frame = new InsertFormFrame();
+		frame.setTitle("성적입력");
 		frame.setVisible(true);
 	}
 	protected void actionPerformedBtnConfirmClass(ActionEvent e) {
 		ConfirmClassGradeFrame frame = new ConfirmClassGradeFrame();
+		frame.setTitle("분반별성적확인");
 		frame.setVisible(true);
 	}
 	protected void actionPerformedBtnconfirmAll(ActionEvent e) {
 		ConfirmAllGradeFrame frame = new ConfirmAllGradeFrame();
+		frame.setTitle("전체성적확인");
 		frame.setVisible(true);
 	}
 }
